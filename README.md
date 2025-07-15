@@ -1,69 +1,38 @@
-# React + TypeScript + Vite
+# Spidr Air Fryer Interest Form
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple Typescript in React app using Tailwind for styling that implements a custom interest form to be embedded at the bottom of Spidr Design’s fictional air fryer landing page.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- Collects the following user data:
+  - First name
+  - Last name
+  - Phone number (with live formatting)
+  - Email address (validated)
+  - Guess the air fryer’s cost (allows decimal/pennies)
+  - A very, very secret 16-digit Spidr PIN, formatted as `####-####-####-####`
+- The PIN input masks all digits except the last entered digit while visually showing the dashes.
+- Submit button prints the entered data to the browser console.
+- Styled to match the Spidr Design brand identity and aesthetic as closely as possible using Tailwind CSS.
+- Responsive and accessible design.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Installation & Usage
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+1. Clone the repo  
+2. Install dependencies with `npm install` or `yarn`  
+3. Run the app locally with `npm start` or `yarn start`  
+4. Embed this form component at the bottom of the existing landing page as needed.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Technical Notes
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- Built with React and TypeScript for type safety.
+- Uses controlled components for all inputs.
+- Custom input formatting and masking logic for phone number and Spidr PIN.
+- Basic validation for email format, phone number, and PIN format.
+- Tailwind CSS for styling consistent with https://spidr.design/

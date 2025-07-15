@@ -67,7 +67,7 @@ const FeedbackForm: React.FC = () => {
         // Slice from each phone number grouping by index (0-3, 3-6, 6-9)
         // And add the 'dash-' to showcase it.
         const numbers = value.replace(/\D/g, '').slice(0, 10);
-        const parts = [];
+        const parts: string[] = [];
         if (numbers.length > 3) {
             parts.push(numbers.slice(0, 3));
         if (numbers.length > 6) {
